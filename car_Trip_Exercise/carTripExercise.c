@@ -6,12 +6,12 @@ Date> February/2024;
 Version> 1.0
 */
 float calculateDistance(float fltTimeTravel, int intSpeed){
-    float intDistance = (float)(fltTimeTravel * intSpeed);
-    return intDistance;
+    float fltDistance = (float)(fltTimeTravel * intSpeed);
+    return fltDistance;
 }
 
-float calculateLitersUsedOnTheTrip(int intDistance){
-    float usedLiters = intDistance / 12;
+float calculateLitersUsedOnTheTrip(float fltDistance){
+    float usedLiters = (float) (fltDistance / 12);
     return usedLiters;
 }
 
@@ -20,12 +20,12 @@ int main(int argc, char const *argv[])
     printf("Welcome to the travel mode of your Honda Civic");
     float fltTimeTravel;
     printf("\nPlease provide the travel time: ");
-    scanf("%f", fltTimeTravel);
+    scanf("%f", &fltTimeTravel);
     int intSpeed;
     printf("Please provide the average speed: ");
     scanf("%d", &intSpeed);
-    float intDistance = calculateDistance(fltTimeTravel, intSpeed);
-    float usedLiters = calculateLitersUsedOnTheTrip();
-
+    float fltDistance = calculateDistance(fltTimeTravel, intSpeed);
+    float usedLiters = calculateLitersUsedOnTheTrip(fltDistance);
+    printf("Average speed: %d\nTravel time: %.2f\nDistance traveled: %.2f\nAmount of fuel used on the trip: %.2f", intSpeed, fltTimeTravel, fltDistance, usedLiters);
     return 0;
 }
