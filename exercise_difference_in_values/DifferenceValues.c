@@ -12,11 +12,11 @@ Author> Bruno Angelo;
 Date> March/2024;
 Version> 1.0
 */
-    int a, b;
+    int intA, intB;
     printf("Enter the value of A: ");
-    scanf("%d", &a);
+    scanf("%d", &intA);
     printf("Enter the value of B: ");
-    scanf("%d", &b);
-    calculateDifference(a,b);
+    scanf("%d", &intB);
+    calculateDifference(intA,intB);
     return 0;
 }
