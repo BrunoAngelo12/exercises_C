@@ -2,9 +2,14 @@
 
 int main(int argc, char const *argv[])
 {
-    float grades[3] = {3.5, 6.7, 6.5};
+    float grades[3];
     float sum = 0.0;
 
+    for(int i = 0; i < 3; i++){
+        printf("Enter the note for position %d: ", i + 1);
+        scanf("%f", &grades[i]);
+    }
+    
     for(int i = 0; i < 3; i++){
         sum += grades[i];
     }
