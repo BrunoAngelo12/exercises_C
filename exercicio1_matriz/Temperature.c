@@ -1,8 +1,21 @@
+#include <stdio.h>
+
+float floatLast3Temperatures[3][4];
+
+void requestTemperatures(){
+    for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 4; j++){
+            printf("Enter temperature %d of month %d: ", j+1, i +1);
+            scanf("%f", &floatLast3Temperatures[i][j]);
+        }
+    }
+}
+
+
 int main(int argc, char const *argv[])
 {
-    float floatLast3Temperatures[3][4] = {{25.4, 27.09, 28.90, 29.5},
-    {21.08, 20.05, 22.90, 20.09}, {18.8, 20.10, 17.7, 19.0}};
-
+    requestTemperatures();
+    system("clear");
     printf("*----Last 3 Temperatures-----*\n");
 
     for(int i = 0; i < 3; i++){
