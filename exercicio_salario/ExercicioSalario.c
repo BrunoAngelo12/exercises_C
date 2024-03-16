@@ -7,6 +7,9 @@ Author> Bruno Angelo;
 Date> March/2024;
 Version> 1.0
 */
+
+#include <stdio.h>
+
 void showTable(){
     printf("*---------------------------------------*\n");
     printf("*  Code  | Office         | Percentage  *\n");
@@ -18,32 +21,58 @@ void showTable(){
     printf("*---------------------------------------*\n");
 }
 
-double calculateNewSalary(double doubleSalary, int intJobCode){
-    double doubleNewSalary=0.0;
+void calculateNewSalary(float floatSalary, int intJobCode){
+    float floatNewSalary;
     switch (intJobCode){
         case 101:
-        doubleNewSalary = 12.0 / 100.0 * doubleSalary;
-        break;
+            floatNewSalary = (float)floatSalary + (0.12 * (float)floatSalary);
+            printf("Your old salary: R$ %.2f\n", floatSalary);
+            printf("Your new salary is: R$ %.2f\n", (float)floatNewSalary);
+            break;
+        case 102:
+            floatNewSalary = (float)floatSalary + (0.26 * (float)floatSalary);
+            printf("Your old salary: R$ %.2f\n", floatSalary);
+            printf("Your new salary is: R$ %.2f\n", (float)floatNewSalary);
+            break;
+        case 103:
+            floatNewSalary = (float)floatSalary + (0.32 * (float)floatSalary);
+            printf("Your old salary: R$ %.2f\n", floatSalary);
+            printf("Your new salary is: R$ %.2f\n", (float)floatNewSalary);
+            break;
+        case 104:
+            floatNewSalary = (float)floatSalary + (0.37 * (float)floatSalary);
+            printf("Your old salary: R$ %.2f\n", floatSalary);
+            printf("Your new salary is: R$ %.2f\n", (float)floatNewSalary);
+            break;
+        case 105:
+            floatNewSalary = (float)floatSalary + (0.41 * (float)floatSalary);
+            printf("Your old salary: R$ %.2f\n", floatSalary);
+            printf("Your new salary is: R$ %.2f\n", (float)floatNewSalary);
+            break;
+        default:
+            floatNewSalary = (float)floatSalary + (0.52 * (float)floatSalary);
+            printf("Your old salary: R$ %.2f\n", floatSalary);
+            printf("Your new salary is: R$ %.2f\n", (float)floatNewSalary);
+            break;
     }
-    return doubleNewSalary;
 }
 
 int main(int argc, char const *argv[])
 {
-    int intJobCode;
-    double doubleSalary, doubleNewSalary;
+    int intJobCode = 0;
+    float floatSalary = 0.0;
     char charContinue = 'y';
     printf("Congratulations on the salary increase.\n\n");
     do{
+        system("cls");
         printf("Enter the amount of your salary: ");
-        scanf("%lf", &doubleSalary);
+        scanf("%f", &floatSalary);
         showTable();
         printf("Select your job code: ");
         scanf("%d", &intJobCode);
-        doubleNewSalary = calculateNewSalary(doubleSalary, intJobCode);
-        printf("Your new salary is: %.2f\n", doubleNewSalary);
-        printf("Do you want to calculate a new salary? (yes = y | no = n): ");
+        calculateNewSalary(floatSalary, intJobCode);
         getchar();
+        printf("Do you want to calculate a new salary? (yes = y | no = n): ");
         charContinue = getchar();
     }while(charContinue == 'y');
     return 0;
